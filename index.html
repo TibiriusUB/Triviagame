@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>Playcade Trivia!</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    </head>
+
+    <body>
+        <div id="main">
+            <div id="marquee"></div>
+            <div id="scoreboard"></div>
+            <div id="display"></div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                // *Create the play screen, scorboard, and "start button"
+                // *Declare main variables, create an array of 'Question-Objects' consisting of question text, 
+                // four questions, [Image/gif refs? Good/bad?], [sound refs? good/bad]
+                // and an answer key. Game code will check player answer against answer key, if "Guess"==="Answer" then
+                // add one to score, and display winning congrats. othewise display loss. 
+                // (only wins need be tallied, final score is based off a fixed number of questions.)
+                // 
+                // *scoreboard has the timer set in it. countdown ends with a loss diplay.
+                // after 10-20 questions, showw tally screen, with victory screen, or loss screen depending on wins.
+                // ***BOUNS CONSIDERATIONS; Final victory is multi-leveled based on amount of correct answers, the more
+                // the better the screen. Sound effects. (recommended) make hover, and click effects for buttons. 
+                // countdown timer shows warning text on last few seconds. Make a flavicon! Can the questions come
+                // externally? YEESH! Remeber your README! Include credit for asset creator/owners!
+                
+                // marquee shows the PLacade trivia logo, and possibly displays WIN!/LOSS! announcments
+
+                // scorboard gets generated, but remains hidden until gamestart
+
+                // initial start button gets generated. links to the same game init that 'Play Again' will.
+
+                // create loop for questions i=Q.length, should call out to variables for wins, images, and sounds.
+                
+                // IN LOOP: generate question box, and four buttons with text from the array.( block out questions if you can)
+
+                // IN LOOP: timer restarts with each question, with a countdown ending the question as much as an answer.
+
+                // LOOP CLOSE: display score, and win/loss as appropriate, as well as generating the 'Play Again?' 
+            });
+        </script>
+    </body>
+</html>
