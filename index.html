@@ -10,7 +10,9 @@
 
     <body>
         <div id="main">
-            <div id="marquee"></div>
+            <div id="marquee">
+                <h1>PLAYCADE-Trivia</h1>
+            </div>
             <div id="scoreboard"></div>
             <div id="display"></div>
         </div>
@@ -23,6 +25,30 @@
                 // add one to score, and display winning congrats. othewise display loss. 
                 // (only wins need be tallied, final score is based off a fixed number of questions.)
                 // 
+                var wins = 0
+                var Tremain = 0
+                var questions = [
+                    pacman = {Question:"What was Pac-man's original name?", a1:"Pizza-man",a2:"Puc-man",a3:"Pill-man",a4:"Pacaratti",CA:"a2"},
+                    spaceinv = {Question:"Why did the Space Invaders speed up as you blasted them?", a1:"Determination!",a2:"Adrenalin",a3:"Poor Processor Speed",a4:"To scare the player!",CA:"a3"},
+                    draglair= {Question: "What was the first game to use Laserdisc video for it's graphics?", a1:"Asteroids",a2:"Jaws",a3:"Pete's Dragon",a4:"Dragon's Lair",CA:"a4"},
+                    //= {Question: "", a1:"",a2:"",a3:"",a4:"",CA:""},
+                ]
+
+                // $("#scoreboard").append(score);
+                
+                var time = $("<span>T</span>").addClass("time").attr("data",Tremain);
+                $("#scoreboard").append(time);
+                var QuestDisp = $("<div>Q</div>").addClass("QuestDisp");
+                $("#display").append(QuestDisp);
+                var start = $("<Button>").addClass(start);
+                // var table = $("<table>").addClass("table")
+                //     for(i=0;i<3;i++){
+                //         var letter = ["A","B","C","D"];
+                //         var row = $("<tr>").addClass("a"+(i+1)).attr(letter[i]);
+                //         }
+                $("#display").append(start) ;             
+                $(".start").on("click", start);
+                //var Choices = 
                 // *scoreboard has the timer set in it. countdown ends with a loss diplay.
                 // after 10-20 questions, showw tally screen, with victory screen, or loss screen depending on wins.
                 // ***BOUNS CONSIDERATIONS; Final victory is multi-leveled based on amount of correct answers, the more
@@ -33,16 +59,18 @@
                 // marquee shows the PLacade trivia logo, and possibly displays WIN!/LOSS! announcments
 
                 // scorboard gets generated, but remains hidden until gamestart
-
+                //visability:hidden
                 // initial start button gets generated. links to the same game init that 'Play Again' will.
-
+                
                 // create loop for questions i=Q.length, should call out to variables for wins, images, and sounds.
                 
                 // IN LOOP: generate question box, and four buttons with text from the array.( block out questions if you can)
-
+                // question box is it's own div
+                // answers are in a table format 2x2 grid
                 // IN LOOP: timer restarts with each question, with a countdown ending the question as much as an answer.
 
                 // LOOP CLOSE: display score, and win/loss as appropriate, as well as generating the 'Play Again?' 
+
             });
         </script>
     </body>
