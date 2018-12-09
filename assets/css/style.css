@@ -47,14 +47,27 @@ body{
     text-align: center;
     font-family: "arcadeclassic";
     display:block;
+    cursor: pointer;
 }
 .QuestDisp{
     font-family: "atarian";
+    font-size: 18px
 }
 .time{
     font-family: "arcadeclassic";
     font-size: 30px;
     text-align: center;
     Margin: auto;
+}
+.answers{
+    background-color: rgb(24, 197, 219);
+    border: solid;
+    color: rgb(17, 15, 128);
+    padding: 4px 7px;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: "atarian";
 }
 

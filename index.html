@@ -48,11 +48,10 @@
 
                     for(i=0;i<4;i++){
                         var letters = ["A","B","C","D"]
-                        var ans = questions[question]
-                        console.log(ans)
-                        var answer = ("ans."+letters[i])
-                        console.log(answer)
-                        var row = $("<button>").addClass(letters[i]).attr("Answ",letters[i]).text(letters[i]+": "+answer);
+                        var ans =(questions[question])                       
+                        var wer= (letters[i])
+                        var answer = (ans[wer])
+                        var row = $("<button>").addClass(letters[i]).addClass("answers").attr("Answ",letters[i]).text(letters[i]+": "+answer);
                         
                         $(".table").append(row);
                         };
