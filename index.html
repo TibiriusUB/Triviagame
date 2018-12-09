@@ -29,32 +29,49 @@
                 var wins = 0
                 var Tremain = 0
                 var questions = [
-                    pacman = {Question:"What was Pac-man's original name?", A:"Pizza-man",B:"Puc-man",C:"Pill-man",D:"Pacaratti",CA:"a2"},
-                    spaceinv = {Question:"Why do the Space Invaders speed up as you blast them?", A:"Determination!",B:"Adrenalin",C:"Poor Processor Speed",D:"To scare the player!",CA:"a3"},
-                    draglair= {Question: "What was the first game to use Laserdisc video for it's graphics?", A:"Asteroids",B:"Jaws",C:"Pete's Dragon",D:"Dragon's Lair",CA:"a4"},
+                    {Question:"What was Pac-man's original name?", A:"Pizza-man",B:"Puc-man",C:"Pill-man",D:"Pacaratti",CA:"a2"},
+                    {Question:"Why do the Space Invaders speed up as you blast them?", A:"Determination!",B:"Adrenalin",C:"Poor Processor Speed",D:"To scare the player!",CA:"a3"},
+                    {Question: "What was the first game to use Laserdisc video for it's graphics?", A:"Asteroids",B:"Jaws",C:"Pete's Dragon",D:"Dragon's Lair",CA:"a4"},
                     //= {Question: "", A:"",B:"",C:"",D:"",CA:""},
                 ]
 
                 // $("#scoreboard").append(score);
+                function eval() {
+                    var countDown = setTimeout(function() {
+                        $(".answers").click(function(){
+                        if (this.alpha === ans.CA) {
+                            console.log("You Got IT!");
+                            continue;
+                        }else{
+                            console.log("too bad");
+                            continue;
+                            };
+                        }, 30000);
+                    });
+                };
                 function game() {
                     $(".start").hide();
-                    var question = 1
-                    //= (Math.floor(Math.random() * questions.length-1));
-                    var table = $("<div></div>").addClass("table");
-                        console.log(question)
-                    $(".QuestDisp").html(questions[question].Question)
-                    console.log(questions[question].Question)
-                    $("#display").append(table);
+                    for (g=0;g<questions.length;g++){
 
-                    for(i=0;i<4;i++){
-                        var letters = ["A","B","C","D"]
-                        var ans =(questions[question])                       
-                        var wer= (letters[i])
-                        var answer = (ans[wer])
-                        var row = $("<button>").addClass(letters[i]).addClass("answers").attr("Answ",letters[i]).text(letters[i]+": "+answer);
+                        var question = [g]
+                        //= (Math.floor(Math.random() * questions.length-1));
+                        var table = $("<div></div>").addClass("table");
+                        console.log(question)
+                        $(".QuestDisp").html(questions[question].Question)
+                        console.log(questions[question].Question)
+                        $("#display").append(table);
+
+                        for(i=0;i<4;i++){
+                            var letters = ["A","B","C","D"]
+                            var ans =(questions[question])                       
+                            var wer= (letters[i])
+                            var answer = (ans[wer])
+                            var row = $("<button>").addClass(letters[i]).addClass("answers").attr("alpha",letters[i]).text(letters[i]+": "+answer);
                         
-                        $(".table").append(row);
+                            $(".table").append(row);
                         };
+                        eval();
+                    };
                 };
                             
                 var time = $("<div></div>").addClass("time").attr("data",Tremain);
@@ -62,11 +79,7 @@
                 var QuestDisp = $("<div></div>").addClass("QuestDisp");
                 $("#display").append(QuestDisp);
                 var start = $("<span>").addClass("start").text("START");
-                // var table = $("<table>").addClass("table")
-                //     for(i=0;i<3;i++){
-                //         var letter = ["A","B","C","D"];
-                //         var row = $("<tr>").addClass("a"+(i+1)).attr(letter[i]);
-                //         }
+              
                 $("#display").append(start) ;             
                 
                 $(".start").click(function(){
