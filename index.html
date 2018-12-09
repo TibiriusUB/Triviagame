@@ -6,6 +6,7 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <
     </head>
 
     <body>
@@ -28,26 +29,52 @@
                 var wins = 0
                 var Tremain = 0
                 var questions = [
-                    pacman = {Question:"What was Pac-man's original name?", a1:"Pizza-man",a2:"Puc-man",a3:"Pill-man",a4:"Pacaratti",CA:"a2"},
-                    spaceinv = {Question:"Why did the Space Invaders speed up as you blasted them?", a1:"Determination!",a2:"Adrenalin",a3:"Poor Processor Speed",a4:"To scare the player!",CA:"a3"},
-                    draglair= {Question: "What was the first game to use Laserdisc video for it's graphics?", a1:"Asteroids",a2:"Jaws",a3:"Pete's Dragon",a4:"Dragon's Lair",CA:"a4"},
-                    //= {Question: "", a1:"",a2:"",a3:"",a4:"",CA:""},
+                    pacman = {Question:"What was Pac-man's original name?", A:"Pizza-man",B:"Puc-man",C:"Pill-man",D:"Pacaratti",CA:"a2"},
+                    spaceinv = {Question:"Why do the Space Invaders speed up as you blast them?", A:"Determination!",B:"Adrenalin",C:"Poor Processor Speed",D:"To scare the player!",CA:"a3"},
+                    draglair= {Question: "What was the first game to use Laserdisc video for it's graphics?", A:"Asteroids",B:"Jaws",C:"Pete's Dragon",D:"Dragon's Lair",CA:"a4"},
+                    //= {Question: "", A:"",B:"",C:"",D:"",CA:""},
                 ]
 
                 // $("#scoreboard").append(score);
-                
-                var time = $("<span>T</span>").addClass("time").attr("data",Tremain);
+                function game() {
+                    $(".start").hide();
+                    var question = 1
+                    //= (Math.floor(Math.random() * questions.length-1));
+                    var table = $("<div></div>").addClass("table");
+                        console.log(question)
+                    $(".QuestDisp").html(questions[question].Question)
+                    console.log(questions[question].Question)
+                    $("#display").append(table);
+
+                    for(i=0;i<4;i++){
+                        var letters = ["A","B","C","D"]
+                        var ans = questions[question]
+                        console.log(ans)
+                        var answer = ("ans."+letters[i])
+                        console.log(answer)
+                        var row = $("<button>").addClass(letters[i]).attr("Answ",letters[i]).text(letters[i]+": "+answer);
+                        
+                        $(".table").append(row);
+                        };
+                };
+                            
+                var time = $("<div></div>").addClass("time").attr("data",Tremain);
                 $("#scoreboard").append(time);
-                var QuestDisp = $("<div>Q</div>").addClass("QuestDisp");
+                var QuestDisp = $("<div></div>").addClass("QuestDisp");
                 $("#display").append(QuestDisp);
-                var start = $("<Button>").addClass(start);
+                var start = $("<span>").addClass("start").text("START");
                 // var table = $("<table>").addClass("table")
                 //     for(i=0;i<3;i++){
                 //         var letter = ["A","B","C","D"];
                 //         var row = $("<tr>").addClass("a"+(i+1)).attr(letter[i]);
                 //         }
                 $("#display").append(start) ;             
-                $(".start").on("click", start);
+                
+                $(".start").click(function(){
+                    $(".start").hide();
+                    game();
+
+                 })
                 //var Choices = 
                 // *scoreboard has the timer set in it. countdown ends with a loss diplay.
                 // after 10-20 questions, showw tally screen, with victory screen, or loss screen depending on wins.

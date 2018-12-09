@@ -1,0 +1,60 @@
+@font-face {
+    font-family: "arcade";
+    src: url("../fonts/ARCADE.TTF");
+}
+@font-face {
+    font-family: "arcadeclassic";
+    src: url("../fonts/ARCADECLASSIC.TTF");
+}
+@font-face {
+    font-family: "atarian";
+    src: url("../fonts/SF Atarian System.ttf");
+}
+
+body{
+    background-color: orange;
+}
+#main{
+    background-color: slategray;
+    margin: 70px;
+    height: 470px;
+}
+#marquee{
+    background-color: tan;
+    padding: 70px;
+    text-align: center;
+    margin: auto;
+    font-size: 100px;
+    font-family: "arcade";
+}
+#scoreboard{
+    height: 40px;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+}
+#display{
+    color: black;
+}
+.start{
+    color:black;
+    font-size: 60px;
+    font-family: 'arcade';
+    margin: auto;
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    text-align: center;
+    font-family: "arcadeclassic";
+    display:block;
+}
+.QuestDisp{
+    font-family: "atarian";
+}
+.time{
+    font-family: "arcadeclassic";
+    font-size: 30px;
+    text-align: center;
+    Margin: auto;
+}
+
